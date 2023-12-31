@@ -1,8 +1,8 @@
 .App {
-    background-color: aquamarine;
-    padding: 1em;
+    background-color: aqua;
 }
 
 .App h1 {
     margin: 0;
+    padding: 10px;
 }

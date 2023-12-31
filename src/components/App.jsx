@@ -1,20 +1,29 @@
 import "./App.css";
+const users = [
+  {
+    id: 1,
+    name: "Vinit",
+  },
+  {
+    id: 2,
+    name: "Vishal",
+  },
+  {
+    id: 3,
+    name: "Aakash",
+  },
+  {
+    id: 4,
+    name: "Guest",
+  },
+];
 
-const user = {
-  firstName: "Vinit",
-  lastName: "Sinha",
-};
-
-function formatName(user) {
-  return user.firstName + " " + user.lastName;
+function formatUser(user) {
+  return <h1>Hello {user.name}</h1>;
 }
 
 function App() {
-  return (
-    <div className="App">
-      <h1>Hello, {formatName(user)}!</h1>
-    </div>
-  );
+  return <div className="App">{users.map(formatUser)}</div>;
 }
 
 export default App;
