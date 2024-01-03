@@ -1,0 +1,4 @@
+/* This welcome.css code will dominant over the app.css code. */
+h1 {
+    background-color: red;
+}

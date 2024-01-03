@@ -1,10 +1,10 @@
 import "./App.css";
+import Welcome from "./welcome";
 
 function App() {
-  // const date = new Date();
   return (
     <div className="App">
-      <h1>{new Date().toLocaleTimeString()}</h1>
+      <Welcome name="Vinit Sinha" />
     </div>
   );
 }
