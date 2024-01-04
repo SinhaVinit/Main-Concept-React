@@ -1,12 +1,15 @@
 import "./App.css";
-import Welcome from "./welcome";
+import Comment from "./comment";
+import comment from "./data";
 
 function App() {
-  const element = <Welcome name="Vishal Sinha" />; // React Element
   return (
     <div className="App">
-      <Welcome name="Vinit Sinha" />
-      {element}
+      <Comment
+        date={comment.date}
+        text={comment.text}
+        author={comment.author}
+      />
     </div>
   );
 }
