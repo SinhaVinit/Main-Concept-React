@@ -1,11 +1,15 @@
 import "./App.css";
+import React from "react";
 
-function App(props) {
-  return (
-    <div className="App">
-      <h1>It is {props.date.toLocaleTimeString()}.</h1>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <h1>Hello, world!</h1>
+        <h2>It is {this.props.date.toLocaleTimeString()}.</h2>
+      </div>
+    );
+  }
 }
 
 export default App;
