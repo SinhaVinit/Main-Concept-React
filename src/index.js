@@ -5,12 +5,8 @@ import App from "./components/App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-function tick() {
-  root.render(
-    <div>
-      <App date={new Date()} />
-    </div>
-  );
-}
-
-setInterval(tick, 1000);
+root.render(
+  <div>
+    <App />
+  </div>
+);
