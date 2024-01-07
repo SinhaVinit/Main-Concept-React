@@ -1,12 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Counter from "./components/App";
+import Form from "./components/App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
 root.render(
   <div>
-    <Counter increment={1} />
+    <Form />
   </div>
 );
