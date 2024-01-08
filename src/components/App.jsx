@@ -5,22 +5,29 @@ class Toggle extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isToggleOn: true };
-
-    // This binding is necessary to make `this` work in the callback
-    // this.handelClick = this.handelClick.bind(this);
   }
 
-  //Second way (we don't have to bind this handelClick because we are using public class syntex)
-  handelClick() {
+  // This will fail because it will run infinite times
+  // handelClick = (great) => {
+  //   this.setState((prevState) => ({
+  //     isToggleOn: !prevState.isToggleOn,
+  //   }));
+  //   console.log(this);
+  //   console.log(great);
+  // };
+
+  // This will work
+  handelClick(great) {
     this.setState((prevState) => ({
       isToggleOn: !prevState.isToggleOn,
     }));
     console.log(this);
+    console.log(great);
   }
 
   render() {
     return (
-      <button onClick={() => this.handelClick()}>
+      <button onClick={() => this.handelClick("Hii")}>
         {this.state.isToggleOn ? "ON" : "OFF"}
       </button>
     );
