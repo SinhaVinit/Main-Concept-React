@@ -11,16 +11,16 @@ class Toggle extends React.Component {
   }
 
   //Second way (we don't have to bind this handelClick because we are using public class syntex)
-  handelClick = () => {
+  handelClick() {
     this.setState((prevState) => ({
       isToggleOn: !prevState.isToggleOn,
     }));
     console.log(this);
-  };
+  }
 
   render() {
     return (
-      <button onClick={this.handelClick}>
+      <button onClick={() => this.handelClick()}>
         {this.state.isToggleOn ? "ON" : "OFF"}
       </button>
     );
