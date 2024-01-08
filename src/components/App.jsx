@@ -7,16 +7,16 @@ class Toggle extends React.Component {
     this.state = { isToggleOn: true };
 
     // This binding is necessary to make `this` work in the callback
-    this.handelClick = this.handelClick.bind(this);
+    // this.handelClick = this.handelClick.bind(this);
   }
 
-  //One way (we have to bind this handelClick)
-  handelClick() {
+  //Second way (we don't have to bind this handelClick because we are using public class syntex)
+  handelClick = () => {
     this.setState((prevState) => ({
       isToggleOn: !prevState.isToggleOn,
     }));
-    // console.log(this);
-  }
+    console.log(this);
+  };
 
   render() {
     return (
