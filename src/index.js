@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Form from "./components/App";
+import Toggle from "./components/App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <div>
-    <Form />
+    <Toggle />
   </div>
 );

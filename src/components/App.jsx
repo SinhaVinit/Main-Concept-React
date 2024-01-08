@@ -1,16 +1,30 @@
 import "./App.css";
+import React from "react";
 
-function Form() {
-  function handleSubmit(e) {
-    e.preventDefault();
-    // console.log(e);
-    console.log("You clicked submit.");
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isToggleOn: true };
+
+    // This binding is necessary to make `this` work in the callback
+    this.handelClick = this.handelClick.bind(this);
   }
-  return (
-    <form onSubmit={handleSubmit}>
-      <button type="submit">Submit</button>
-    </form>
-  );
+
+  //One way (we have to bind this handelClick)
+  handelClick() {
+    this.setState((prevState) => ({
+      isToggleOn: !prevState.isToggleOn,
+    }));
+    // console.log(this);
+  }
+
+  render() {
+    return (
+      <button onClick={this.handelClick}>
+        {this.state.isToggleOn ? "ON" : "OFF"}
+      </button>
+    );
+  }
 }
 
-export default Form;
+export default Toggle;
