@@ -1,37 +1,19 @@
 import "./App.css";
-import React from "react";
 
-class Toggle extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { isToggleOn: true };
-  }
-
-  // This will fail because it will run infinite times
-  // handelClick = (great) => {
-  //   this.setState((prevState) => ({
-  //     isToggleOn: !prevState.isToggleOn,
-  //   }));
-  //   console.log(this);
-  //   console.log(great);
-  // };
-
-  // This will work
-  handelClick(great) {
-    this.setState((prevState) => ({
-      isToggleOn: !prevState.isToggleOn,
-    }));
-    console.log(this);
-    console.log(great);
-  }
-
-  render() {
-    return (
-      <button onClick={() => this.handelClick("Hii")}>
-        {this.state.isToggleOn ? "ON" : "OFF"}
-      </button>
-    );
-  }
+function UserGreeting(props) {
+  return <h1>Welcome back!</h1>;
 }
 
-export default Toggle;
+function GuestGreeting(props) {
+  return <h1>Please sign up!</h1>;
+}
+
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <UserGreeting />;
+  }
+  return <GuestGreeting />;
+}
+
+export default Greeting;
