@@ -6,3 +6,13 @@
     margin: 0;
     padding: 10px;
 }
+
+.LogoutButton {
+    margin: 10px;
+    padding: 10px 40px;
+}
+
+.LoginButton {
+    margin: 10px;
+    padding: 10px 40px;
+}
