@@ -1,60 +1,34 @@
 import "./App.css";
 import React from "react";
 
-function Message(props) {
-  return (
-    <h1>The user is {props.isLoggedIn ? "currently" : "not"} logged in.</h1>
-  );
+function WarningBanner(props) {
+  if (props.showWarning) {
+    return <div className="warningClass">Warning!</div>;
+  }
+  return null;
 }
 
-function LoginButton(props) {
-  return (
-    <button onClick={props.onClick} className="LoginButton">
-      Login
-    </button>
-  );
-}
-
-function LogoutButton(props) {
-  return (
-    <button onClick={props.onClick} className="LogoutButton">
-      Logout
-    </button>
-  );
-}
-
-class Greeting extends React.Component {
+class Page extends React.Component {
   constructor(props) {
     super(props);
-    this.handelLoginClick = this.handelLoginClick.bind(this);
-    this.handelLogoutClick = this.handelLogoutClick.bind(this);
-    this.state = { isLoggedIn: props.isLoggedIn };
-    // console.log(props.isLoggedIn);
+    this.handelToggleClick = this.handelToggleClick.bind(this);
+    this.state = { showWarning: true };
   }
 
-  handelLoginClick() {
-    this.setState({ isLoggedIn: true });
-  }
-
-  handelLogoutClick() {
-    this.setState({ isLoggedIn: false });
+  handelToggleClick() {
+    this.setState({ showWarning: !this.state.showWarning });
   }
 
   render() {
-    const isLoggedIn = this.state.isLoggedIn;
-    let button;
-    if (isLoggedIn) {
-      button = <LoginButton onClick={this.handelLogoutClick} />;
-    } else {
-      button = <LogoutButton onClick={this.handelLoginClick} />;
-    }
     return (
       <div className="App">
-        <Message isLoggedIn={isLoggedIn} />
-        {button}
+        <WarningBanner showWarning={this.state.showWarning} />
+        <button onClick={this.handelToggleClick}>
+          {this.state.showWarning ? "Hide" : "Show"}
+        </button>
       </div>
     );
   }
 }
 
-export default Greeting;
+export default Page;

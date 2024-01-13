@@ -1,18 +1,17 @@
 .App {
+    /* margin: auto; */
+    padding: 10px;
     background-color: aqua;
 }
 
-.App h1,h2 {
-    margin: 0;
-    padding: 10px;
+.warningClass {
+    /* margin: 10px; */
+    padding: 50px;
+    background-color: rgb(230, 37, 37);
+    font-size: 100px;
 }
 
-.LogoutButton {
-    margin: 10px;
-    padding: 10px 40px;
-}
-
-.LoginButton {
+button {
     margin: 10px;
     padding: 10px 40px;
 }
