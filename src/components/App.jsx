@@ -1,34 +1,18 @@
 import "./App.css";
-import React from "react";
 
-function WarningBanner(props) {
-  if (props.showWarning) {
-    return <div className="warningClass">Warning!</div>;
-  }
-  return null;
+// function App() {
+//   const numbers = [1, 2, 3, 4, 5];
+//   const doubled = numbers.map((number) => number * 2);
+//   console.log(doubled);
+// }
+
+function App() {
+  const numbers = [1, 2, 3, 4, 5];
+  const doubled = numbers.map((number) => (
+    // You’ll be given a warning that a key should be provided for list items.
+    <li key={number.toString()}>{number}</li>
+  ));
+  return <ul>{doubled}</ul>;
 }
 
-class Page extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handelToggleClick = this.handelToggleClick.bind(this);
-    this.state = { showWarning: true };
-  }
-
-  handelToggleClick() {
-    this.setState({ showWarning: !this.state.showWarning });
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <WarningBanner showWarning={this.state.showWarning} />
-        <button onClick={this.handelToggleClick}>
-          {this.state.showWarning ? "Hide" : "Show"}
-        </button>
-      </div>
-    );
-  }
-}
-
-export default Page;
+export default App;

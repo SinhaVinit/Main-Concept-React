@@ -1,11 +1,9 @@
 .App {
-    /* margin: auto; */
     padding: 10px;
     background-color: aqua;
 }
 
 .warningClass {
-    /* margin: 10px; */
     padding: 50px;
     background-color: rgb(230, 37, 37);
     font-size: 100px;
