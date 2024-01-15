@@ -8,9 +8,12 @@ import "./App.css";
 
 function App() {
   const numbers = [1, 2, 3, 4, 5];
-  const doubled = numbers.map((number) => (
+  const doubled = numbers.map((number, index) => (
     // You’ll be given a warning that a key should be provided for list items.
-    <li key={number.toString()}>{number}</li>
+    // Use "index", only if items have no stable IDs
+    <li key={index}>
+      Key = {index} Value = {number}
+    </li>
   ));
   return <ul>{doubled}</ul>;
 }
