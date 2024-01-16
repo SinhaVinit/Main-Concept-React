@@ -11,10 +11,13 @@ function ListItem(props) {
 
 function App(props) {
   const posts = props.posts;
-  const listItems = posts.map((post) => (
-    <ListItem key={post.id} value={post} />
-  ));
-  return <div>{listItems}</div>;
+  return (
+    <div>
+      {posts.map((post) => (
+        <ListItem key={post.id} value={post} />
+      ))}
+    </div>
+  );
 }
 
 export default App;
