@@ -2,14 +2,3 @@
     padding: 10px;
     background-color: aqua;
 }
-
-.warningClass {
-    padding: 50px;
-    background-color: rgb(230, 37, 37);
-    font-size: 100px;
-}
-
-button {
-    margin: 10px;
-    padding: 10px 40px;
-}

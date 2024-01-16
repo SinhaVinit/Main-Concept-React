@@ -1,21 +1,20 @@
 import "./App.css";
 
-// function App() {
-//   const numbers = [1, 2, 3, 4, 5];
-//   const doubled = numbers.map((number) => number * 2);
-//   console.log(doubled);
-// }
+function ListItem(props) {
+  return (
+    <div className="App">
+      <h1>{props.value.title}</h1>
+      <p>{props.value.content}</p>
+    </div>
+  );
+}
 
-function App() {
-  const numbers = [1, 2, 3, 4, 5];
-  const doubled = numbers.map((number, index) => (
-    // You’ll be given a warning that a key should be provided for list items.
-    // Use "index", only if items have no stable IDs
-    <li key={index}>
-      Key = {index} Value = {number}
-    </li>
+function App(props) {
+  const posts = props.posts;
+  const listItems = posts.map((post) => (
+    <ListItem key={post.id} value={post} />
   ));
-  return <ul>{doubled}</ul>;
+  return <div>{listItems}</div>;
 }
 
 export default App;
