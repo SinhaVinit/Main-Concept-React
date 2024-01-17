@@ -1,38 +1,30 @@
 import "./App.css";
 import React from "react";
 
-class NameForm extends React.Component {
+class EssayForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    this.state = { value: "Please write as essay about your favorite food." };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    // console.log(event);
     this.setState({ value: event.target.value });
   }
 
   handleSubmit(event) {
-    // console.log(event);
-    alert("A name was submitted: " + this.state.value);
-    // After submitting the form the page is refreshing. To prevent this we have to use preventDefault().
+    alert("An essay was submitted: " + this.state.value);
     event.preventDefault();
   }
 
   render() {
     return (
-      <form className="App" onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <label>
-          Name:
-          <input
-            type="text"
-            placeholder="Enter your name"
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
+          Essay:
+          <textarea value={this.state.value} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />
       </form>
@@ -40,4 +32,4 @@ class NameForm extends React.Component {
   }
 }
 
-export default NameForm;
+export default EssayForm;
