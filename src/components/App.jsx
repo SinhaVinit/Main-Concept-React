@@ -1,10 +1,3 @@
-// In most cases, we recommend using controlled components to implement forms.
-// In a controlled component, form data is handled by a React component.
-// The alternative is uncontrolled components, where form data is handled by the DOM itself.
-
-// To write an uncontrolled component, instead of writing an event handler for every state update,
-// you can use a ref to get form values from the DOM.
-
 import "./App.css";
 import React from "react";
 
@@ -17,6 +10,8 @@ class NameForm extends React.Component {
   }
 
   handleSubmit(event) {
+    // console.log(event);
+    // console.log(this);
     alert("Your name is: " + this.input.current.value);
     event.preventDefault();
   }
@@ -26,7 +21,13 @@ class NameForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <label>
           Enter Your Name:
-          <input type="text" ref={this.input} placeholder="Enter your name" />
+          <input
+            type="text"
+            // If we put "value" instead of "defaultValue," then we are not able to make changes in the DOM after rendering this app.
+            defaultValue="Name"
+            ref={this.input}
+            placeholder="Enter your name"
+          />
         </label>
         <button type="submit" value="Submit">
           Submit
