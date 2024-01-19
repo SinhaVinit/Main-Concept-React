@@ -1,10 +1,10 @@
 import "./App.css";
 import React from "react";
 
-class NameForm extends React.Component {
+class FileForm extends React.Component {
   constructor(props) {
     super(props);
-    this.input = React.createRef();
+    this.fileInput = React.createRef();
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -12,7 +12,8 @@ class NameForm extends React.Component {
   handleSubmit(event) {
     // console.log(event);
     // console.log(this);
-    alert("Your name is: " + this.input.current.value);
+    // alert("Your name is: " + this.fileInput.current.value);
+    alert(`Selected file - ${this.fileInput.current.files[0].name}`);
     event.preventDefault();
   }
 
@@ -20,14 +21,8 @@ class NameForm extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          Enter Your Name:
-          <input
-            type="text"
-            // If we put "value" instead of "defaultValue," then we are not able to make changes in the DOM after rendering this app.
-            defaultValue="Name"
-            ref={this.input}
-            placeholder="Enter your name"
-          />
+          Upload your file:
+          <input type="file" ref={this.fileInput} />
         </label>
         <button type="submit" value="Submit">
           Submit
@@ -36,4 +31,4 @@ class NameForm extends React.Component {
     );
   }
 }
-export default NameForm;
+export default FileForm;
