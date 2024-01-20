@@ -2,7 +2,18 @@ body {
     margin: 0;
     background-color: rgb(192, 217, 53);
 }
-/* 
-code {
 
-} */
+.colour {
+    padding: 20px;
+    background-color: aqua;
+}
+
+.boiling {
+    display: inline-block;
+    background-color: chartreuse;
+}
+
+.notBoiling {
+    display: inline-block;
+    background-color: red ;
+}
