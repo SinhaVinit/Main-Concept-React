@@ -1,14 +1,12 @@
 import "./App.css";
 import React from "react";
 
-function BoilingVerdict(props) {
-  if (props.celsius >= 100) {
-    return <p>The water would boil.</p>;
-  }
-  return <p>The water would not boil.</p>;
-}
+const scaleNames = {
+  c: "Celsius",
+  f: "Fahrenheit",
+};
 
-class Calculator extends React.Component {
+class TemperatureInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = { temperature: "" };
@@ -16,17 +14,27 @@ class Calculator extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({ temperature: event.target.value });
+  handleChange(e) {
+    this.setState({ temperature: e.target.value });
   }
 
   render() {
     return (
-      <fieldset className="App">
-        <legent>Enter temperature in celsius: </legent>
+      <fieldset>
+        <legend>Enter temperature in {scaleNames[this.props.scale]}:</legend>
         <input value={this.state.temperature} onChange={this.handleChange} />
-        <BoilingVerdict celsius={parseFloat(this.state.temperature)} />
       </fieldset>
+    );
+  }
+}
+
+class Calculator extends React.Component {
+  render() {
+    return (
+      <div>
+        <TemperatureInput scale="c" />
+        <TemperatureInput scale="f" />
+      </div>
     );
   }
 }
