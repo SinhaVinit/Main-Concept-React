@@ -1,34 +1,34 @@
 import "./App.css";
 import React from "react";
 
-class FileForm extends React.Component {
+function BoilingVerdict(props) {
+  if (props.celsius >= 100) {
+    return <p>The water would boil.</p>;
+  }
+  return <p>The water would not boil.</p>;
+}
+
+class Calculator extends React.Component {
   constructor(props) {
     super(props);
-    this.fileInput = React.createRef();
+    this.state = { temperature: "" };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleSubmit(event) {
-    // console.log(event);
-    // console.log(this);
-    // alert("Your name is: " + this.fileInput.current.value);
-    alert(`Selected file - ${this.fileInput.current.files[0].name}`);
-    event.preventDefault();
+  handleChange(event) {
+    this.setState({ temperature: event.target.value });
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Upload your file:
-          <input type="file" ref={this.fileInput} />
-        </label>
-        <button type="submit" value="Submit">
-          Submit
-        </button>
-      </form>
+      <fieldset className="App">
+        <legent>Enter temperature in celsius: </legent>
+        <input value={this.state.temperature} onChange={this.handleChange} />
+        <BoilingVerdict celsius={parseFloat(this.state.temperature)} />
+      </fieldset>
     );
   }
 }
-export default FileForm;
+
+export default Calculator;
