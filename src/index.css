@@ -3,17 +3,7 @@ body {
     background-color: rgb(192, 217, 53);
 }
 
-.colour {
-    padding: 20px;
+.App {
     background-color: aqua;
-}
-
-.boiling {
-    display: inline-block;
-    background-color: chartreuse;
-}
-
-.notBoiling {
-    display: inline-block;
-    background-color: red ;
+    padding: 20px;
 }

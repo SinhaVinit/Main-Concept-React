@@ -1,0 +1,13 @@
+.fancyBorder {
+    padding: 10px 10px;
+    border: 10px solid;
+    border-radius:20px ;
+}
+  
+.fancyBorder-blue {
+    border-color: blue;
+}
+
+.fancyBorder-red {
+    border-color: red;
+}
