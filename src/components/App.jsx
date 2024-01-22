@@ -1,18 +1,15 @@
-import FancyBorder from "./FancyBorder";
+import SplitPane from "./SplitPane";
 
-function WelcomeDialog() {
-  return (
-    <div className="App">
-      <FancyBorder color="blue">
-        <h1>Welcome!</h1>
-        <p>Thank you for visiting our spacecraft.</p>
-      </FancyBorder>
-      <FancyBorder color="red">
-        <h1>Welcome!</h1>
-        <p>Thank you for visiting our spacecraft.</p>
-      </FancyBorder>
-    </div>
-  );
+function Contacts() {
+  return <div className="Contacts" />;
 }
 
-export default WelcomeDialog;
+function Chat() {
+  return <div className="Chat" />;
+}
+
+function App() {
+  return <SplitPane left={<Contacts />} right={<Chat />} />;
+}
+
+export default App;
