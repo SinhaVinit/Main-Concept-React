@@ -11,6 +11,7 @@ function Dialog(props) {
     <FancyBorder colour="blue">
       <h1>{props.title}</h1>
       <p>{props.message}</p>
+      {props.children}
     </FancyBorder>
   );
 }
